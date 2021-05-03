@@ -9,6 +9,10 @@
     box-sizing: border-box;
 }
 
+html {
+    font-size: 93.75%;
+}
+
 body {
     background: #f0f2f5;
     font-family: 'Poppins', sans-serif;
@@ -30,7 +34,7 @@ h2 {
 /* ------------------------ HEADER ------------------------ */
 header {
     background: #2d4a22;
-    padding: 2rem 0 2rem;
+    padding: 2rem 0 10rem;
     text-align: center;
 }
 
@@ -39,9 +43,9 @@ header {
     font-weight: 100;
     padding: 2rem 0 10rem;
 }
-/* ------------------------ HEADER ------------------------ */
+/* ------------------------ HEADER F ------------------------ */
 
-/* ------------------------ BALANCE ------------------------ */
+/* ------------------------ BALANCE S ------------------------ */
 #balance {
     margin-top: -8rem;
 }
@@ -51,6 +55,7 @@ header {
     margin-top: 0;
 }
 
+/* ------------------------ CARDS S ------------------------ */
 .card {
     background: #fff;
     padding: 1.5rem 2rem;
@@ -62,6 +67,9 @@ header {
 .card h3 {
     font-weight: normal;
     font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .card p {
@@ -74,16 +82,44 @@ header {
     background: #49aa26;
     color: #fff;
 }
-/* ------------------------ BALANCE ------------------------ */
+/* ------------------------ LINKS S ------------------------ */
+a {
+    color: #49aa26;
+    text-decoration: none;
+}
 
-/* ------------------------ TRANSACTIONS ------------------------ */
+a:hover {
+    color: #3dd705;
+}
+
+.button.new {
+    display: inline-block;
+    margin-bottom: 0.8rem;
+}
+/* ------------------------ LINKS F ------------------------ */
+
+/* ------------------------ CARDS F ------------------------ */
+.sr-only {
+    position: absolute;
+    margin: -1px;
+    padding: 0;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    white-space: nowrap;
+    clip: rect(0, 0, 0, 0);
+    border-width: 0;
+}
+/* ------------------------ BALANCE F ------------------------ */
+
+/* ------------------------ TRANSACTIONS S ------------------------ */
 #data-table {
     width: 100%;
     border-spacing: 0rem 0.5rem;
     color: #969cb3;
 }
 
-table th {
+table thead th {
     background:#fff;
     color: #969cb3;
     font-weight: normal;
@@ -91,12 +127,12 @@ table th {
     text-align: left;
 }
 
-table td {
+table tbody td {
     background: #fff;
     padding: 1rem 2rem;
 }
 
-table tr {
+table tbody tr {
     opacity: 0.7;
 }
 
@@ -108,7 +144,11 @@ table tbody tr:hover{
 table thead tr th:first-child,
 table tbody tr td:first-child {
     border-radius: 0.25rem 0 0 0.25rem;
+}
 
+table thead tr th:last-child,
+table tbody tr td:last-child {
+    border-radius: 0 0.25rem 0.25rem 0;
 }
 
 td.description {
@@ -122,13 +162,27 @@ td.income {
 td.expense {
     color: #e92929;
 }
-/* ------------------------ TRANSACTIONS ------------------------ */
+/* ------------------------ TRANSACTIONS F ------------------------ */
 
-/* ------------------------ FOOTER ------------------------ */
+/* ------------------------ FOOTER S ------------------------ */
 .footer {
     text-align: center;
     color: var(--dark-blue);
     opacity: 0.6rem;
     padding: 4rem 0 2rem;
 }
-/* ------------------------ FOOTER ------------------------ */
+/* ------------------------ FOOTER F ------------------------ */
+
+/* ------------------------ RESPONSIVE S ------------------------ */
+@media(min-width: 800px) {
+    html {
+        font-size: 87.5%;
+    }
+
+    #balance {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+}
+/* ------------------------ RESPONSIVE F ------------------------ */
